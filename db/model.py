@@ -2,7 +2,7 @@ from sqlalchemy import MetaData,create_engine
 from sqlalchemy import Table,Column,Integer,DateTime,String
 from datetime import datetime
 from sqlalchemy import insert
-
+from sqlalchemy import select
 metadata=MetaData()
 
 try:
@@ -17,7 +17,7 @@ class Users:
     def __init__(self):
         self.users=Table(
             'users',metadata,
-            Column('id',Integer(),primary_key=True,autoincrement=True,default=10000),
+            Column('id',Integer,primary_key=True,autoincrement=True),#default=10000),
             Column('reg_date',DateTime(),default=datetime.now),
             Column('user_fname',String(20),nullable=False),
             Column('user_lname',String(20),nullable=False),
@@ -25,12 +25,9 @@ class Users:
             Column('user_password',String(50),nullable=False),
         )
     
-    def add_user(self,userData):
+    def add_user(self,u_Data):
         
-        insertUser=insert(self.users).values
-        (
-        userData
-        )
+        insertUser=self.users.insert().values(u_Data)
         res=conn.execute(insertUser)
 
 class Products:
@@ -48,11 +45,14 @@ class Products:
         
     def add_product(self,p_Data):
 
-        insertProduct=self.products.insert().values
-        (
-          p_Data
-        )
+        insertProduct=self.products.insert().values(p_Data)
         res=conn.execute(insertProduct)
+
+    def show_product(self,filter):
+        
+        showPdt=select([self.products])
+        
+
 
 metadata.create_all(engine)
 

@@ -45,13 +45,13 @@ function checkName() {
 
 
         const data = {
-            'fname': fname.value,
-            'lname': lname.value,
-            'email': email.value,
-            'pass': pass.value
+            'u_fname': fname.value,
+            'u_lname': lname.value,
+            'u_email': mail.value,
+            'u_pass': password.value
         };
 
-        fetch('https://localhost:3000/controller/addUser.py', {
+        fetch('addUser.py', {
                 method: 'POST', // or 'PUT'
                 headers: {
                     'Content-Type': 'application/json',
