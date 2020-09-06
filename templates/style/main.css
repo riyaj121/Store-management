@@ -1,0 +1,28 @@
+body,
+footer {
+    background-color: black;
+}
+
+.navbar-collapse {
+    height: 100 vh;
+    width: 25 vw;
+}
+
+.company-desc {
+    height: 50 vh;
+    width: 100vw;
+}
+
+.icons {
+    position: center !important;
+}
+
+.social-media {
+    margin-bottom: 60px !important;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
