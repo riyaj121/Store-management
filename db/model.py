@@ -6,7 +6,7 @@ from sqlalchemy import select
 metadata=MetaData()
 
 try:
-    engine=create_engine('mysql+pymysql://root:butterscotch@localhost/store',pool_recycle=3600)
+    engine=create_engine('mysql+pymysql://root:password@localhost/store',pool_recycle=3600)
 except:
     print("Failed to access")
 
