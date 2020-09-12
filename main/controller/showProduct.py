@@ -1,4 +1,7 @@
-from  sample.sample.main.model import Products
+from  main.model import Products
+# importing the requests library 
+import requests 
+import json
 from nltk.stem import PorterStemmer
 
 ps=PorterStemmer()
@@ -26,3 +29,15 @@ def filter_product(showProduct,filter):
     # sorting products according to filter
     showProduct_wFilter=showProduct.objects.all.group_by(col)
     return showProduct_wFilter
+
+
+# getting data from the product page
+  
+# api-endpoint 
+URL = "https://localhost:3000/"
+  
+# sending get request and saving the response as response object 
+r = requests.get(url = URL) 
+  
+# extracting data in json format 
+data = r.json() 

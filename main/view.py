@@ -13,3 +13,7 @@ def view_Product(request):
 def wrongPath(request):
 
     return HttpResponse("error 404")
+
+def admin_dbps(request):
+
+    return render(request,'showProduct.py')

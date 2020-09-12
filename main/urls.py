@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from sample import view
+from main import view
 
 urlpatterns = [
     path('',view.wrongPath),
     path('admin/', admin.site.urls),
     path('signup',view.signUp_page),
     path('viewProducts',view.view_Product),
+    path('admin/db_ops',view.admin_dbps)
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

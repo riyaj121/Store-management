@@ -1,11 +1,20 @@
-from model import Users 
+from main.model import User
+
+def add_user(u_Data):
+
+    # adding user to the user table
+    # args- u_Data: a dictionary having user details via form
+    
+    insertUser=User(u_Data)
+    insertUser.save(force_insert=True)
+
 
 # importing the requests library 
 import requests 
 import json
   
 # api-endpoint 
-URL = "static/getData.js"
+URL = "https://localhost:3000/showProduct"
   
 # sending get request and saving the response as response object 
 r = requests.get(url = URL) 
@@ -15,8 +24,5 @@ data = r.json()
 
 userData=json.loads(data)
 
-new_User=Users()
 # adding a new user to table users
-new_User.add_user(
-userData
-)
+add_user(userData)
