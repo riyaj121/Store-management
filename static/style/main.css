@@ -1,7 +1,9 @@
-body,
-footer {
-    background-color: black;
-}
+html {
+    height: 100%;
+  }
+body {
+    min-height: 100%;
+  }
 
 .navbar-collapse {
     height: 100 vh;
@@ -21,8 +23,9 @@ footer {
     margin-bottom: 60px !important;
 }
 
-.footer {
+.social-media-main{
     position: absolute;
-    bottom: 0;
-    width: 100%;
+    bottom: 0px;
+    background-color: black;
+    width:100vw;
 }
